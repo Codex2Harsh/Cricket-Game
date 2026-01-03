@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cricket game</title>
     <link rel="stylesheet" href="game.css">
 </head>
+
 <body>
     <h1>Bat Ball Stump Game.</h1>
     <button onclick="
-    let userChoice='You have chosen Bat';
-    let randomNumber = Math.random() * 3;
-    let computerChoice;
-    let choice;
-    if(randomNumber >0 && randomNumber<=1){
-        choice = 'Bat';
-        // console.log('computer choice is Bat');
-    }else if(randomNumber >1 && randomNumber <=2){
-        choice ='Ball';
-        // console.log('computer chooice is Ball');
-    }else{
-        choice = 'Stump';
-        // console.log('computer coice is Stump');
-    }
-    computerChoice=`Computer choice is ${choice}`;
+    generateChoice();
     let result;
     if(choice === 'Ball'){
         result= 'User won.';
@@ -33,27 +21,14 @@
         result=`User lost`;
     }
     alert(`
-    ${userChoice}. 
-    ${computerChoice}.
+    You have chosen Bat. 
+    Computer choice is ${choice}.
     ${result}`);
 
     ">Bat</button>
     <button onclick="
-    userChoice='You have chosen Ball';
-    randomNumber = Math.random() * 3;
-    // computerChoice;
-
-    if(randomNumber >0 && randomNumber<=1){
-        choice = 'Bat';
-        // console.log('computer choice is Bat');
-    }else if(randomNumber >1 && randomNumber <=2){
-        choice ='Ball';
-        // console.log('computer chooice is Ball');
-    }else{
-        choice = 'Stump';
-        // console.log('computer coice is Stump');
-    }
-    computerChoice=`Computer choice is ${choice}`;
+    generateChoice();
+    
     // result;
     if(choice === 'Ball'){
         result= `it's a tie`;
@@ -63,27 +38,13 @@
         result= 'User won.';
     }
     alert(`
-    ${userChoice}. 
-    ${computerChoice}.
+    You have chosen Ball.
+    Computer choice is ${choice}.
     ${result}`);
-    "
-    >Ball</button>
+    ">Ball</button>
     <button onclick="
-    userChoice='You have chosen Stump';
-    randomNumber = Math.random() * 3;
-    // computerChoice;
+    generateChoice();
 
-    if(randomNumber >0 && randomNumber<=1){
-        choice = 'Bat';
-        // console.log('computer choice is Bat');
-    }else if(randomNumber >1 && randomNumber <=2){
-        choice ='Ball';
-        // console.log('computer chooice is Ball');
-    }else{
-        choice = 'Stump';
-        // console.log('computer coice is Stump');
-    }
-    computerChoice=`Computer choice is ${choice}`;
     // result;
     if(choice === 'Ball'){
         result=`User lost`;
@@ -93,9 +54,12 @@
         result= `it's a tie`;
     }
     alert(`
-    ${userChoice}. 
-    ${computerChoice}.
+    You have chosen Stump. 
+    Computer choice is ${choice}.
     ${result}`);
     ">Stump</button>
+
+    <script src="game.js"></script>
 </body>
+
 </html>
