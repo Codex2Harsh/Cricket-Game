@@ -9,12 +9,9 @@ function resetScore(scoreStr){
         tie:0,
     };
     score.display=function(){
-        return ` Final Scores: 
-        Win: ${score.win} 
-        Lost: ${score.lost}
-        Tie: ${score.tie}`;
+        return ` Final Scores:  Win: ${score.win} Lost: ${score.lost} Tie: ${score.tie}`;
     };
-
+    show();
 }
 //a much robust code is implied above
 // if(scoreStr !== null){
@@ -76,11 +73,8 @@ function computerMove(userchoice, compChoice) {
 }
 function show ( userchoice, computerMove, result){
     localStorage.setItem('Score', JSON.stringify(score));
-
-    alert(`
-    You have chosen ${userchoice}. 
-    Computer choice is ${computerMove}.
-    ${result}
-    ${score.display()}
-    `);
+    document.querySelector('#usermove').innerText= userchoice ? `You have chosen ${userchoice}.` : '';
+    document.querySelector('#computermove').innerText= computerMove ? ` Computer choice is ${computerMove}.` : '';
+    document.querySelector('#result').innerText= result ? result : '';
+    document.querySelector('#score').innerText= score.display();
 }

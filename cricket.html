@@ -10,25 +10,37 @@
 
 <body>
     <h1>Bat Ball Stump Game.</h1>
+
     <button onclick="
    let choice = generateChoice();
     let result = computerMove('Bat',choice);
     let display = show('Bat',choice,result);
-    ">Bat</button>
+    " class="buttons">
+    <img src="images/Cricket-Bat-.webp" alt="bat image" class="choice-images" >
+</button>
     <button onclick="
     choice = generateChoice();
     result = computerMove('Ball',choice);
     display = show('Ball',choice,result);
-    ">Ball</button>
+    "class="buttons">
+    <img src="images/red-cricket-ball.webp" alt="ball image" class="choice-images">
+</button>
     <button onclick="
     choice = generateChoice();
     result = computerMove('Stump',choice);
     display = show('Stump',choice,result);
-    ">Stump</button>
-    <button onclick="localStorage.clear()
-    //updating score so previous memory retrival is !possible
-   resetScore()";
-    >Reset</button>
+    "class="buttons">
+    <img src="images/stumps.webp" alt="stumps image" class="choice-images">
+</button>
+
+    <h3 id="usermove"></h3>
+    <h3 id="computermove"></h3>
+    <h3 id="result"></h3>
+    <h3 id="score"></h3>
+        <button onclick="localStorage.clear()
+        //updating score so previous memory retrival is !possible
+       resetScore()";
+        class="reset">Reset</button>
     <script src="game.js"></script>
 </body>
 
